@@ -26,3 +26,7 @@ resource "aws_glue_job" "tf-gluejob" {
 resource "aws_glue_catalog_database" "aws_glue_catalog_database" {
   name = "tf-db"
 }
+
+resource "aws_glue_catalog_database" "database" {
+  name = "tf-db-a"
+}
