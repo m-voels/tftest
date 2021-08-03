@@ -16,7 +16,7 @@ provider "aws" {
 
 resource "aws_glue_trigger" "scheduled_trigger" {
   name     = "scheduled_trigger"
-  schedule = "cron(0/15 * * * ? *)"
+  schedule = "cron(0 0 * * ? *)"
   type     = "SCHEDULED"
 
   actions {
