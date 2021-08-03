@@ -23,10 +23,11 @@ resource "aws_glue_job" "tf-gluejob" {
   }
 }
 
-resource "aws_glue_catalog_database" "aws_glue_catalog_database" {
-  name = "tf-db"
-}
+resource "aws_glue_job" "tf-gluejob-2" {
+  name     = "tf-gluejob-2"
+  role_arn = "arn:aws:iam::152944667076:role/glue_helper"
 
-resource "aws_glue_catalog_database" "database" {
-  name = "tf-db-a"
+  command {
+    script_location = "s3://mvil-glue/MySQLBYOD.py"
+  }
 }
