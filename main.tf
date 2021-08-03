@@ -31,6 +31,8 @@ resource "aws_glue_catalog_database" "database" {
   name = "tf-db-a"
 }
 
+
+
 resource "aws_glue_job" "tf-gluejob-2" {
   name     = "tf-gluejob-2"
   role_arn = "arn:aws:iam::152944667076:role/glue_helper"
