@@ -14,8 +14,8 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "aws_glue_job" "tf-gluejob" {
-  name     = "tf-gluejob"
+resource "aws_glue_job" "tf-gluejob-scheduled-1" {
+  name     = "tf-gluejob-scheduled-1"
   role_arn = "arn:aws:iam::152944667076:role/glue_helper"
 
   command {
@@ -23,24 +23,8 @@ resource "aws_glue_job" "tf-gluejob" {
   }
 }
 
-resource "aws_glue_catalog_database" "aws_glue_catalog_database" {
-  name = "tf-db"
-}
-
-resource "aws_glue_catalog_database" "database" {
-  name = "tf-db-a"
-}
-
-
-
-resource "aws_glue_catalog_database" "database-b" {
-  name = "tf-db-b"
-}
-
-
-
-resource "aws_glue_job" "tf-gluejob-2" {
-  name     = "tf-gluejob-2"
+resource "aws_glue_job" "tf-gluejob-scheduled-2" {
+  name     = "tf-gluejob-scheduled-2"
   role_arn = "arn:aws:iam::152944667076:role/glue_helper"
 
   command {
