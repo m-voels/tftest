@@ -19,11 +19,11 @@ resource "aws_glue_trigger" "scheduled_trigger" {
   schedule = "cron(0/15 * * * ? *)"
   type     = "SCHEDULED"
 
-  actions {
+  actions { [
     job_name = aws_glue_job.tf-gluejob-scheduled-1,
     job_name = aws_glue_job.tf-gluejob-scheduled-2
 
-  }
+  ] }
 }
 
 resource "aws_glue_job" "tf-gluejob-scheduled-1" {
