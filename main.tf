@@ -14,6 +14,18 @@ provider "aws" {
   region  = "us-east-1"
 }
 
+resource "aws_glue_trigger" "scheduled_trigger" {
+  name     = "scheduled_trigger"
+  schedule = "cron(0/15 * * * ? *)"
+  type     = "SCHEDULED"
+
+  actions {
+    job_name = aws_glue_job.tf-gluejob-scheduled-1
+    job_name = aws_glue_job.tf-gluejob-scheduled-2
+
+  }
+}
+
 resource "aws_glue_job" "tf-gluejob-scheduled-1" {
   name     = "tf-gluejob-scheduled-1"
   role_arn = "arn:aws:iam::152944667076:role/glue_helper"
