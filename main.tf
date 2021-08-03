@@ -31,7 +31,7 @@ resource "aws_glue_catalog_database" "database" {
   name = "tf-db-a"
 }
 
-resource "aws_glue_catalog_database" "database" {
+resource "aws_glue_catalog_database" "database-b" {
   name = "tf-db-b"
 }
 
