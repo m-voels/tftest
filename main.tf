@@ -20,7 +20,7 @@ resource "aws_glue_trigger" "scheduled_trigger" {
   type     = "SCHEDULED"
 
   actions {
-    job_name = aws_glue_job.tf-gluejob-scheduled-1
+    job_name = aws_glue_job.tf-gluejob-scheduled-1,
     job_name = aws_glue_job.tf-gluejob-scheduled-2
 
   }
