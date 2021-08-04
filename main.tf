@@ -86,3 +86,13 @@ resource "aws_glue_job" "tf-gluejob-conditional-2" {
     script_location = "s3://mvil-glue/MySQLBYOD.py"
   }
 }
+
+resource "aws_sns_topic" "glue-topic" {
+  name = "glue-topic"
+}
+
+resource "aws_sns_topic_subscription" "sns-topic-email-subscription" {
+  topic_arn = aws_sns_topic.glue-topic.arn
+  protocol  = "email"
+  endpoint  = "matthewvoels@gmail.com"
+}
