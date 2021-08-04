@@ -67,6 +67,7 @@ resource "aws_glue_trigger" "conditional_trigger" {
       state    = "SUCCEEDED"
     }
   }
+
 }
 
 resource "aws_glue_job" "tf-gluejob-conditional-1" {
