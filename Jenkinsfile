@@ -15,9 +15,13 @@ pipeline {
         stage('terraform init') {
             steps {
                 sh 'terraform init'
+                sh 'terraform validate'
             }
         }
         stage('terraform apply') {
+            when {
+                branch "dev"
+            }
             steps {
 
                 sh 'aws s3 cp s3://mvil-glue/terraform.tfstate ./terraform.tfstate'
