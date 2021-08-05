@@ -92,6 +92,9 @@ resource "aws_sns_topic" "glue-topic" {
   name = "glue-topic"
 }
 
+
+
+
 resource "aws_sns_topic_subscription" "sns-topic-email-subscription" {
   topic_arn = aws_sns_topic.glue-topic.arn
   protocol  = "email"
