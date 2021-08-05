@@ -86,7 +86,7 @@ resource "aws_glue_job" "tf-gluejob-conditional-2" {
   command {
     script_location = "s3://mvil-glue/MySQLBYOD.py"
   }
-
+}
 
 resource "aws_sns_topic" "glue-topic" {
   name = "glue-topic"
