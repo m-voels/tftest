@@ -84,7 +84,7 @@ resource "aws_glue_job" "tf-gluejob-conditional-2" {
   role_arn = "arn:aws:iam::152944667076:role/glue_helper"
 
   command {
-    script_location = "s3://mvil-glue/MySQLBYOD.py"
+    script_location = "s3://mvil-glue/MySQLBYOD-fake.py"
   }
 }
 
